@@ -5,7 +5,7 @@
 #include <iostream>
 #include <sstream>
 #include <iomanip>
-#include "contact.hpp"
+#include "Contact.hpp"
 
 class Phonebook
 {
@@ -19,5 +19,5 @@ public:
     Phonebook();
     ~Phonebook();
 };
-
+ 
 #endif
