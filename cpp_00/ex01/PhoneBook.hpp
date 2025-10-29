@@ -1,11 +1,11 @@
 #ifndef PHONEBOOK_H
 #define PHONEBOOK_H
 
+#include "Contact.hpp"
 #include <string>
 #include <iostream>
 #include <sstream>
 #include <iomanip>
-#include "Contact.hpp"
 
 class Phonebook
 {
@@ -19,5 +19,7 @@ public:
     Phonebook();
     ~Phonebook();
 };
- 
+
+bool isPrintableString(const std::string &s);
+
 #endif

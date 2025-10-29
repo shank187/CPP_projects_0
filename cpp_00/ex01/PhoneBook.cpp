@@ -6,31 +6,60 @@ Phonebook::~Phonebook()
 {
 }
 
+bool isPrintableString(const std::string &s) {
+    for (size_t i = 0; i < s.length(); ++i) {
+        if (!std::isprint(s[i]))
+            return false;
+    }
+    return true;
+}
+
 void Phonebook::addContact()
 {
-    static int count;
+    static int count = 0;
     int index = count%8;
     std::string info;
 
-    std::cout << "Enter the firsname:" << std::endl;
+    std::cout << "Enter the firstname:" << std::endl;
     std::getline(std::cin, info);
+    if (isPrintableString(info) == false) {
+        std::cout << "Invalid input. Non-printable characters detected." << std::endl;
+        return;
+    }
     contacts[index].setFirstName(info);
     std::cout << "Enter the lastname:" << std::endl;
     std::getline(std::cin, info);
+    if (isPrintableString(info) == false) {
+        std::cout << "Invalid input. Non-printable characters detected." << std::endl;
+        return;
+    }
     contacts[index].setLastName(info);
     std::cout << "Enter the nickname:"<< std::endl ;
     std::getline(std::cin, info);
+    if (isPrintableString(info) == false) {
+        std::cout << "Invalid input. Non-printable characters detected." << std::endl;
+        return;
+    }
     contacts[index].setNickName(info);
     std::cout << "Enter the phone number:" << std::endl;
     std::getline(std::cin, info);
+    if (isPrintableString(info) == false) {
+        std::cout << "Invalid input. Non-printable characters detected." << std::endl;
+        return;
+    }
     contacts[index].setPhoneNumber(info);
     std::cout << "Enter the darkest secret:" << std::endl;
     std::getline(std::cin, info);
+    if (isPrintableString(info) == false) {
+        std::cout << "Invalid input. Non-printable characters detected." << std::endl;
+        return;
+    }
     contacts[index].setDarkestSecret(info);
     count++;
     if (count <= 8)
         size = count;
 }
+
 
 std::string form_field(std::string str)
 {
@@ -58,12 +87,21 @@ void Phonebook::displayInfos(int index)
 void Phonebook::searchContact()
 {
     std::string str;
+    if(size == 0)
+    {
+        std::cout << "Phonebook is empty!" << std::endl;
+        return;
+    }
     for (int i = 0; i < size; i++)
     {
         displayContactRow(i, contacts[i]);
     }
     std::cout << "enter the index of the contact to display infos (0~" << size - 1 << ")" <<std::endl;
     std::getline(std::cin, str);
+    if (isPrintableString(str) == false) {
+        std::cout << "Invalid input. Non-printable characters detected." << std::endl;
+        return;
+    }
     std::stringstream ss(str);
     int index;
     if (!(ss >> index)) {
