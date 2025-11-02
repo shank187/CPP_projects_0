@@ -4,7 +4,7 @@ Zombie* zombieHorde(int N, std::string name)
 {
     if (N < 1)
         return NULL;
-    Zombie* horde = new Zombie[N];
+    Zombie* horde = new (std::nothrow) Zombie[N];
     if (!horde)
         return NULL;
     for (int i = 0; i < N; i++)
