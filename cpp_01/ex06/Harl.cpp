@@ -14,7 +14,7 @@ void Harl::warning() {
 void Harl::error() {
     std::cout << "[ ERROR ]\nThis is unacceptable! I want to speak to the manager now.\n"<< std::endl;
 }
-
+// In Harl.cpp
 void Harl::complain(std::string level) {
     void (Harl::*complainMethods[])() = {
         &Harl::debug,
@@ -23,6 +23,7 @@ void Harl::complain(std::string level) {
         &Harl::error
     };
     std::string levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+
     for (int i = 0; i < 4; i++) {
         if (level == levels[i]) {
             switch (i) {
@@ -38,11 +39,9 @@ void Harl::complain(std::string level) {
                 case 3:
                     (this->*complainMethods[3])();
                     break;
-                default:
-                    std::cout << "[ Probably complaining about insignificant problems ]"<<std::endl;
-                    break;
-                }
+            }
             return;
         }
     }
+    std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 }

@@ -8,6 +8,8 @@ std::string my_replace(std::string content, const std::string &to_find, const st
     size_t start_pos = 0;
     size_t pos;
 
+    if(to_find.empty())
+        return content;
     while ((pos = content.find(to_find, start_pos)) != std::string::npos)
     {
         new_string += content.substr(start_pos, pos - start_pos);
