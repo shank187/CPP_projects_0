@@ -1,0 +1,97 @@
+=== Constructing fixed‑point values ===
+Default constructor called
+Int constructor called
+Float constructor called
+Default constructor called
+Destructor called
+Destructor called
+Int constructor called
+Float constructor called
+Copy constructor called
+Default constructor called
+Copy assignment operator called
+
+=== Values and conversions ===
+a = 0 (should be 0 or near‑zero)
+b = 2586
+c = 10
+d = 2.5
+e (copy of d) = 2.5
+f (assigned from b) = 2586
+c.toInt() = 10
+d.toInt() = 2
+b.toFloat() = 2586
+
+=== Arithmetic operator tests (+, -, *, /) ===
+c + d = Default constructor called
+12.5
+Destructor called
+c - d = Default constructor called
+7.5
+Destructor called
+d * Fixed(2) = Int constructor called
+Default constructor called
+1280
+Destructor called
+Destructor called
+c / d = Default constructor called
+4
+Destructor called
+
+=== Comparison operator tests (>, <, >=, <=, ==, !=) ===
+Is c > d ? true
+Is c < d ? false
+Is c >= d ? true
+Is c <= d ? false
+Is c == d ? false
+Is c != d ? true
+
+=== Increment / Decrement operator tests ===
+Default constructor called
+g = 0
+++g = 0.00390625
+g = 0.00390625
+g++ = Copy constructor called
+0.00390625
+Destructor called
+g = 0.0078125
+--g = 0.00390625
+g = 0.00390625
+g-- = Copy constructor called
+0.00390625
+Destructor called
+g = 0
+
+=== min / max static methods ===
+min(c, d) = 2.5
+max(c, d) = 10
+min(f, b) = 2586
+max(f, b) = 2586
+
+=== Edge / Extra cases ===
+Int constructor called
+zero = 0
+c / zero = Default constructor called
+8.38861e+06
+Destructor called
+Destructor called
+Int constructor called
+negative = -3
+negative + d = Default constructor called
+-0.5
+Destructor called
+negative * Fixed(-2) = Int constructor called
+Default constructor called
+1536
+Destructor called
+Destructor called
+
+=== End of tests ===
+Destructor called
+Destructor called
+Destructor called
+Destructor called
+Destructor called
+Destructor called
+Destructor called
+Destructor called
