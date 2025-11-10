@@ -1,6 +1,5 @@
 #include "ClapTrap.hpp"
 
-
 ClapTrap::ClapTrap() : name("Default") {
     hitPoints = 10;
     energyPoints = 10;
@@ -28,7 +27,6 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& other) {
         name = other.name;
         hitPoints = other.hitPoints;
         energyPoints = other.energyPoints;
-
         attackDamage = other.attackDamage;
     }
     std::cout << "ClapTrap " << name << " assigned!" << std::endl;
