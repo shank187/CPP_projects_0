@@ -1,5 +1,5 @@
 #include "ClapTrap.hpp"
-
+#include <iostream>
 
 ClapTrap::ClapTrap() : name("Default") {
     hitPoints = 10;
