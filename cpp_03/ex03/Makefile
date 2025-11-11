@@ -3,10 +3,10 @@ NAME = claptrap
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = ClapTrap.cpp ScavTrap.cpp main.cpp FragTrap.cpp
+SRC = ClapTrap.cpp ScavTrap.cpp DiamondTrap.cpp main.cpp FragTrap.cpp
 OBJ = $(SRC:.cpp=.o)
 
-HEADERS = ClapTrap.hpp ScavTrap.hpp FragTrap.hpp
+HEADERS = ClapTrap.hpp ScavTrap.hpp DiamondTrap.hpp FragTrap.hpp
 
 all: $(NAME)
 

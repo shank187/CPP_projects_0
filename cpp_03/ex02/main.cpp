@@ -1,15 +1,13 @@
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main() {
-    ScavTrap scav("Guardian");
-
-    scav.attack("Intruder");
-    scav.takeDamage(30);
-    scav.beRepaired(20);
-    scav.guardGate();
-    scav.takeDamage(80);
-    scav.attack("AnotherIntruder");
+    FragTrap frag("Fraggy");
+    frag.attack("EnemyBot");
+    frag.highFivesGuys();
+    frag.takeDamage(40);
+    frag.beRepaired(25);
+    frag.takeDamage(90);
+    frag.attack("AnotherEnemyBot");
 
     return 0;
 }
